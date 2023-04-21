@@ -1,0 +1,36 @@
+/////////////////////////////// C#
+public class Solution {
+    public long[] FindPrefixScore(int[] nums) {
+        int n = nums.Length;
+        long[] ans = new long[n];
+        long gSum = 0;
+        long pSum = 0;
+        long maxV = 0;
+        
+        for(int i=0;i<n;i++){
+            maxV = Math.Max(maxV, nums[i]);
+            pSum = nums[i] + maxV;
+            gSum += pSum;
+            ans[i] = gSum;
+        }
+        return ans;
+    }
+}
+///////////////////////////Java
+class Solution {
+    public long[] findPrefixScore(int[] nums) {
+        int n = nums.length;
+        long[] ans = new long[n];
+        long gSum = 0;
+        long pSum = 0;
+        long maxV = 0;
+        
+        for(int i=0;i<n;i++){
+            maxV = Math.max(maxV, nums[i]);
+            pSum = nums[i] + maxV;
+            gSum += pSum;
+            ans[i] = gSum;
+        }
+        return ans;
+    }
+}
