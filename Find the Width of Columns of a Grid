@@ -1,0 +1,19 @@
+/////////////////////////Find the Width of Columns of a Grid - Easy Level
+//////////////////////////////////////////////leetcode - https://leetcode.com/problems/find-the-width-of-columns-of-a-grid/solutions/?languageTags=csharp
+//////////////////////////////////////////////leetcode contest - https://leetcode.com/contest/biweekly-contest-102/problems/find-the-width-of-columns-of-a-grid/
+public class Solution {
+    public int[] FindColumnWidth(int[][] grid) {
+         int m = grid[0].Length;
+        int[] ans = new int[m];
+        int n = grid.Length;
+        for(int i=0;i<m;i++){
+            int curr = 0;
+            for(int j=0;j<n;j++){
+                curr = Math.Max(curr, grid[j][i].ToString().Length);
+            }
+            ans[i] = curr;
+        }
+        return ans;
+        
+    }
+}
